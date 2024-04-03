@@ -4,7 +4,7 @@ public class BoardSetup {
 
     int[][] board = new int[9][9];
 
-    public int[][] boardFill() throws InvalidInputException {
+    public int[][] boardFill() {
         BoardPrinter print = new BoardPrinter();
         boolean boardReady = false;
         String input;
@@ -23,10 +23,11 @@ public class BoardSetup {
                 row = Character.getNumericValue(strippedInput.charAt(1));
                 digit = Character.getNumericValue(strippedInput.charAt(2));
                 if(column < 1 || column > 9 || row < 1 || row > 9 || digit < 1 || digit > 9) {
-                    throw new InvalidInputException("Input out of range");
+                    System.out.println("input out of boundaries");
+                }else {
+                    board[row - 1][column - 1] = digit;
+                    print.BoardPrinter(board);
                 }
-                board[row - 1][column - 1] = digit;
-                print.BoardPrinter(board);
             }
         }
         return board;

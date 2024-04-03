@@ -1,6 +1,6 @@
 public class SudokuRunner {
 
-    public SudokuRunner() throws InvalidInputException{
+    public SudokuRunner() {
         BoardSetup setup = new BoardSetup();
         BoardPrinter printer = new BoardPrinter();
         int[][] filledBoard = setup.boardFill();
