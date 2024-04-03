@@ -19,9 +19,9 @@ public class BoardSetup {
                 boardReady = true;
             } else {
                 String strippedInput = input.replaceAll(" ", "");
-                column = Character.getNumericValue(input.charAt(0));
-                row = Character.getNumericValue(input.charAt(1));
-                digit = Character.getNumericValue(input.charAt(2));
+                column = Character.getNumericValue(strippedInput.charAt(0));
+                row = Character.getNumericValue(strippedInput.charAt(1));
+                digit = Character.getNumericValue(strippedInput.charAt(2));
                 if(column < 1 || column > 9 || row < 1 || row > 9 || digit < 1 || digit > 9) {
                     throw new InvalidInputException("Input out of range");
                 }
